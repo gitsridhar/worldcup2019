@@ -105,7 +105,7 @@ int main() {
     tournament[2][AUS] = -1;
     tournament[2][NZL] = 0;
     tournament[2][AFG] = 2;
-    tournament[2][PAK] = -1;
+    tournament[2][PAK] = 0;
     tournament[2][IND] = 0;
     tournament[2][BAN] = 0;
     tournament[2][SLA] = -1;
@@ -149,7 +149,7 @@ int main() {
     // 6 Pakistan
     tournament[6][WIN] = 0;
     tournament[6][ENG] = 2;
-    tournament[6][SOA] = -1;
+    tournament[6][SOA] = 2;
     tournament[6][AUS] = 0;
     tournament[6][NZL] = -1;
     tournament[6][AFG] = -1;
@@ -194,7 +194,7 @@ int main() {
     tournament[9][BAN] = 1;
     tournament[9][SLA] = 0; //self
     
-
+/*
 tournament[WIN][AFG] = 2;
 tournament[AFG][WIN] = 0;
 
@@ -216,8 +216,8 @@ tournament[IND][ENG] = 2;
 tournament[SOA][AUS] = 2; // ok
 tournament[AUS][SOA] = 0;
 
-tournament[SOA][PAK] = 0; // ok
-tournament[PAK][SOA] = 2;
+//tournament[SOA][PAK] = 0; // ok
+//tournament[PAK][SOA] = 2;
 
 tournament[SOA][SLA] = 0; // ok
 tournament[SLA][SOA] = 2;
@@ -243,7 +243,7 @@ tournament[BAN][IND] = 0;
 tournament[IND][SLA] = 2;
 tournament[SLA][IND] = 0;
 
-
+*/
     vector<string> sortedpoints;
     vector<string> remainingmatches;
 
