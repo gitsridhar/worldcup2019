@@ -30,6 +30,20 @@ string country(int n) {
     return NULL;
 }
 
+int index(string str) {
+   if (str == "WIN") return 0;
+   if (str == "ENG") return 1;
+   if (str == "SOA") return 2;
+   if (str == "AUS") return 3;
+   if (str == "NZL") return 4;
+   if (str == "AFG") return 5;
+   if (str == "PAK") return 6;
+   if (str == "IND") return 7;
+   if (str == "BAN") return 8;
+   if (str == "SLA") return 9;
+   return -1;
+}
+
 vector<string> printremainingmatches(vector<string> remainingmatches, string team, vector<string> sortedpoints) {
     vector<string> retval;
     string pointval;
@@ -65,7 +79,7 @@ int main() {
     tournament[0][ENG] = 0;
     tournament[0][SOA] = 1;
     tournament[0][AUS] = 0;
-    tournament[0][NZL] = -1;
+    tournament[0][NZL] = 0;
     tournament[0][AFG] = -1;
     tournament[0][PAK] = 2;
     tournament[0][IND] = -1;
@@ -82,7 +96,7 @@ int main() {
     tournament[1][PAK] = 0;
     tournament[1][IND] = -1;
     tournament[1][BAN] = 2;
-    tournament[1][SLA] = -1;
+    tournament[1][SLA] = 0;
     
     // 2 South Africa
     tournament[2][WIN] = 1;
@@ -109,7 +123,7 @@ int main() {
     tournament[3][SLA] = 2;
     
     // 4 NewZealand
-    tournament[4][WIN] = -1;
+    tournament[4][WIN] = 2;
     tournament[4][ENG] = -1;
     tournament[4][SOA] = 2;
     tournament[4][AUS] = -1;
@@ -128,7 +142,7 @@ int main() {
     tournament[5][NZL] = 0;
     tournament[5][AFG] = 0; //self
     tournament[5][PAK] = -1;
-    tournament[5][IND] = -1;
+    tournament[5][IND] = 0;
     tournament[5][BAN] = -1;
     tournament[5][SLA] = 0;
     
@@ -150,7 +164,7 @@ int main() {
     tournament[7][SOA] = 2;
     tournament[7][AUS] = 2;
     tournament[7][NZL] = 1;
-    tournament[7][AFG] = -1;
+    tournament[7][AFG] = 2;;
     tournament[7][PAK] = 2;
     tournament[7][IND] = 0; //self
     tournament[7][BAN] = -1;
@@ -170,7 +184,7 @@ int main() {
     
     // 9 SriLanka
     tournament[9][WIN] = -1;
-    tournament[9][ENG] = -1;
+    tournament[9][ENG] = 2;
     tournament[9][SOA] = -1;
     tournament[9][AUS] = 0;
     tournament[9][NZL] = 0;
@@ -180,6 +194,56 @@ int main() {
     tournament[9][BAN] = 1;
     tournament[9][SLA] = 0; //self
     
+
+tournament[WIN][AFG] = 2;
+tournament[AFG][WIN] = 0;
+
+tournament[WIN][IND] = 2;
+tournament[IND][WIN] = 0;
+
+tournament[WIN][SLA] = 2;
+tournament[SLA][WIN] = 0;
+
+tournament[ENG][AUS] = 0; // imp.
+tournament[AUS][ENG] = 2;
+
+tournament[ENG][NZL] = 0; // imp.
+tournament[NZL][ENG] = 2;
+
+tournament[ENG][IND] = 0; // imp.
+tournament[IND][ENG] = 2;
+
+tournament[SOA][AUS] = 2; // ok
+tournament[AUS][SOA] = 0;
+
+tournament[SOA][PAK] = 0; // ok
+tournament[PAK][SOA] = 2;
+
+tournament[SOA][SLA] = 0; // ok
+tournament[SLA][SOA] = 2;
+
+tournament[AUS][NZL] = 2;
+tournament[NZL][AUS] = 0;
+
+tournament[NZL][PAK] = 2;
+tournament[PAK][NZL] = 0;
+
+tournament[AFG][PAK] = 0;
+tournament[PAK][AFG] = 2;
+
+tournament[AFG][BAN] = 0;
+tournament[BAN][AFG] = 2;
+
+tournament[PAK][BAN] = 2;
+tournament[BAN][PAK] = 0;
+
+tournament[IND][BAN] = 2;
+tournament[BAN][IND] = 0;
+
+tournament[IND][SLA] = 2;
+tournament[SLA][IND] = 0;
+
+
     vector<string> sortedpoints;
     vector<string> remainingmatches;
 
@@ -206,10 +270,6 @@ int main() {
 
     sort(sortedpoints.rbegin(), sortedpoints.rend());
 
-    //for(int i=0; i<10; i++) {
-    //    cout << sortedpoints[i] << endl;
-    //}
-
     //cout << "Remaining matches" << endl;
 
     //for(int i=0; i<remainingmatches.size(); i++) {
@@ -227,6 +287,15 @@ int main() {
     vector<string> banmatches = printremainingmatches(remainingmatches, "BAN", sortedpoints);
     vector<string> slamatches = printremainingmatches(remainingmatches, "SLA", sortedpoints);
 
+    cout << "-----" << endl;
+    for(int i=0; i<10; i++) {
+        cout << sortedpoints[i].substr(2,3) << " " << sortedpoints[i].substr(0,2) << endl;
+        if (i == 3) {
+            cout << "-----" << endl;
+        }
+    }
+
+    cout << "-----" << endl;
     return(0);
 }
 
