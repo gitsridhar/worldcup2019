@@ -194,21 +194,29 @@ int main() {
     tournament[9][BAN] = 1;
     tournament[9][SLA] = 0; //self
     
-/*
+    tournament[SOA][PAK] = 0; // ok
+    tournament[PAK][SOA] = 2;
+
+    tournament[AFG][BAN] = 0;
+    tournament[BAN][AFG] = 2;
+
+    tournament[ENG][AUS] = 0; // imp.
+    tournament[AUS][ENG] = 2;
+
+    tournament[NZL][PAK] = 0;
+    tournament[PAK][NZL] = 2;
+
+    tournament[WIN][IND] = 0;
+    tournament[IND][WIN] = 2;
+
 tournament[WIN][AFG] = 2;
 tournament[AFG][WIN] = 0;
 
-tournament[WIN][IND] = 2;
-tournament[IND][WIN] = 0;
+tournament[WIN][SLA] = 0;
+tournament[SLA][WIN] = 2;
 
-tournament[WIN][SLA] = 2;
-tournament[SLA][WIN] = 0;
-
-tournament[ENG][AUS] = 0; // imp.
-tournament[AUS][ENG] = 2;
-
-tournament[ENG][NZL] = 0; // imp.
-tournament[NZL][ENG] = 2;
+tournament[ENG][NZL] = 2; // imp.
+tournament[NZL][ENG] = 0;
 
 tournament[ENG][IND] = 0; // imp.
 tournament[IND][ENG] = 2;
@@ -216,34 +224,24 @@ tournament[IND][ENG] = 2;
 tournament[SOA][AUS] = 2; // ok
 tournament[AUS][SOA] = 0;
 
-//tournament[SOA][PAK] = 0; // ok
-//tournament[PAK][SOA] = 2;
-
 tournament[SOA][SLA] = 0; // ok
 tournament[SLA][SOA] = 2;
 
-tournament[AUS][NZL] = 2;
-tournament[NZL][AUS] = 0;
-
-tournament[NZL][PAK] = 2;
-tournament[PAK][NZL] = 0;
+tournament[AUS][NZL] = 0;
+tournament[NZL][AUS] = 2;
 
 tournament[AFG][PAK] = 0;
 tournament[PAK][AFG] = 2;
 
-tournament[AFG][BAN] = 0;
-tournament[BAN][AFG] = 2;
+tournament[PAK][BAN] = 0;
+tournament[BAN][PAK] = 2;
 
-tournament[PAK][BAN] = 2;
-tournament[BAN][PAK] = 0;
+tournament[IND][BAN] = 0;
+tournament[BAN][IND] = 2;
 
-tournament[IND][BAN] = 2;
-tournament[BAN][IND] = 0;
+tournament[IND][SLA] = 0;
+tournament[SLA][IND] = 2;
 
-tournament[IND][SLA] = 2;
-tournament[SLA][IND] = 0;
-
-*/
     vector<string> sortedpoints;
     vector<string> remainingmatches;
 
